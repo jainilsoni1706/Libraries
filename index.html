@@ -8,15 +8,36 @@
 </head>
 <body>
     
-    <button class="click-able">Click</button>
+    <table border="3">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <button value="123" class="click-able">Click</button>
+    <button value="231" class="click-able">Click 2</button>
+    <button value="312" class="click-able">Click 3</button>
 
 <script src="jainil.js"></script>
 <script>
 
 
-    jLib.onClick(".click-able",function(){
-        console.log("CLicked");
+    jLib.on("click", ".click-able",() => {
+        // console.log(this.document.activeElement.classList[0]);
+        jLib.select('>button').hide();
     });
+
+    
+    // jLib.on("click", ">button",function(z){
+    //     console.log();
+    // });
+
+    // jLib.alter("button");
+
+    // jLib.alter('.click-able').error('name');
+    // jLib.alter('>button').error('name');
 
         // jLib.replaceTheseFromString(jLib.selectors,"1","kla.sdj82akjd-asjkdh-#kl.$58ayqkjdqj.)*2i");
 

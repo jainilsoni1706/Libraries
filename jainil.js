@@ -31,16 +31,16 @@ class jLib {
     }
 
     static onClick(element, callable) {
-        this.eventPaser(this.replaceTheseFromString(this.selectors,"",element), this.elementSelectorParser(element),callable, 'click');
+        let z = this.eventPaser(this.replaceTheseFromString(this.selectors,"",element), this.elementSelectorParser(element),callable, 'click');
     }
 
     static eventPaser(element, selector, callable, event) {
         if (selector == 'class') {
-            document.querySelectorAll(this.selectors.class + element).addEventListener(event, callable);
+            document.querySelector(`.${element}`).addEventListener(event, callable);
         } else if (selector == "id") {
             return document.getElementById(element).addEventListener(event, callable);
         }
-
+ 
     }
 
     static replaceTheseFromString(oldstr, newstr, element)
@@ -51,12 +51,11 @@ class jLib {
             oldstr = Object.values(oldstr);
         }
 
-        if (Array.isArray(oldstr)) {
-            [...element].forEach(item => {
-                this.log(item);
-                // work in progress...
-            });
+        for (let i = 0; i < oldstr.length; i++) {
+            element = element.replace(oldstr[i], newstr);
         }
+
+        return element;
     }
 
     static log(...args) {

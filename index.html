@@ -16,30 +16,25 @@
         </tr>
     </table>
 
-    <button value="123" class="click-able">Click</button>
-    <button value="231" class="click-able">Click 2</button>
-    <button value="312" class="click-able">Click 3</button>
+    <button value="123" class="click-able1 btn" style="background-color: green;">Hide</button>
+    <button value="231" class="click-able2 btn" style="background-color: aqua;">Click 2</button>
+    <button value="312" class="click-able3 btn" style="background-color: red;">Show</button>
 
 <script src="jainil.js"></script>
 <script>
 
 
-    jLib.on("click", ".click-able",() => {
+    jLib.on("click", ".click-able1",() => {
         // console.log(this.document.activeElement.classList[0]);
-        jLib.select('>button').hide();
+        jLib.select('>table').hide();
     });
 
-    
-    // jLib.on("click", ">button",function(z){
-    //     console.log();
-    // });
+    jLib.on("click", ".click-able3",() => {
+        // console.log(this.document.activeElement.classList[0]);
+        jLib.select('>table').show();
+    });
 
-    // jLib.alter("button");
-
-    // jLib.alter('.click-able').error('name');
-    // jLib.alter('>button').error('name');
-
-        // jLib.replaceTheseFromString(jLib.selectors,"1","kla.sdj82akjd-asjkdh-#kl.$58ayqkjdqj.)*2i");
+    console.log(jLib.date('d-m-y'));
 
 </script>
 </body>
